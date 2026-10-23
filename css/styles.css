@@ -1,0 +1,10 @@
+/* ═══════════════════════════════════════════════════════
+   GRUPO DOMUS CAPITAL — Main Stylesheet
+   Importa todos los módulos CSS en orden.
+   ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import url('variables.css');
+@import url('base.css');
+@import url('components.css');

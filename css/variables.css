@@ -1,0 +1,79 @@
+/* ═══════════════════════════════════════════════════════
+   GRUPO DOMUS CAPITAL — Design Tokens
+   Paleta extraída del logotipo dorado metalizado DC.
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Paleta cromática ── */
+  --gold:          #B8860B;       /* Dorado principal (logo) */
+  --gold-dark:     #96700A;       /* Dorado oscuro para texto accesible */
+  --gold-light:    #E6C766;       /* Dorado claro: hovers, subrayados */
+  --gold-accent:   #C9A227;       /* Dorado medio para detalles */
+
+  --black:         #141210;       /* Negro carbón cálido */
+  --charcoal:      #1E1C18;       /* Antracita para secciones oscuras */
+  --charcoal-mid:  #2A2722;       /* Antracita medio */
+  --grey-dark:     #4A4640;       /* Gris oscuro texto secundario */
+  --grey:          #7A756D;       /* Gris medio */
+  --grey-light:    #C5BFB5;       /* Gris claro bordes */
+  --cream:         #FAF7F2;       /* Fondo principal */
+  --cream-dark:    #F0EBE1;       /* Fondo alternativo */
+  --white:         #FFFFFF;
+
+  /* ── Tipografía ── */
+  --font-serif:    'Cormorant Garamond', 'Georgia', serif;
+  --font-sans:     'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Escala tipográfica fluid (clamp) */
+  --text-xs:       clamp(0.75rem,  0.7rem  + 0.15vw, 0.8125rem);
+  --text-sm:       clamp(0.8125rem,0.76rem + 0.2vw,  0.9375rem);
+  --text-base:     clamp(0.9375rem,0.88rem + 0.25vw, 1.0625rem);
+  --text-lg:       clamp(1.0625rem,0.95rem + 0.4vw,  1.25rem);
+  --text-xl:       clamp(1.25rem,  1.05rem + 0.6vw,  1.5rem);
+  --text-2xl:      clamp(1.5rem,   1.15rem + 1vw,    2rem);
+  --text-3xl:      clamp(2rem,     1.4rem  + 1.8vw,  2.75rem);
+  --text-4xl:      clamp(2.5rem,   1.6rem  + 2.5vw,  3.75rem);
+  --text-5xl:      clamp(3rem,     1.8rem  + 3.5vw,  5rem);
+
+  /* ── Espaciado ── */
+  --space-xs:      clamp(0.5rem,   0.4rem  + 0.3vw,  0.75rem);
+  --space-sm:      clamp(0.75rem,  0.6rem  + 0.5vw,  1rem);
+  --space-md:      clamp(1rem,     0.75rem + 0.8vw,  1.5rem);
+  --space-lg:      clamp(1.5rem,   1rem    + 1.5vw,  2.5rem);
+  --space-xl:      clamp(2.5rem,   1.5rem  + 3vw,    4rem);
+  --space-2xl:     clamp(4rem,     2.5rem  + 4vw,    7rem);
+  --space-3xl:     clamp(6rem,     3.5rem  + 6vw,    10rem);
+
+  /* ── Layout ── */
+  --max-width:     1320px;
+  --gutter:        clamp(1.25rem, 1rem + 1.5vw, 3rem);
+  --radius:        4px;
+  --radius-lg:     8px;
+
+  /* ── Transiciones ── */
+  --ease:          cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 200ms;
+  --duration:      400ms;
+  --duration-slow: 600ms;
+
+  /* ── Sombras (muy sutiles, nada de difusas enormes) ── */
+  --shadow-sm:     0 1px 3px rgba(20,18,16,0.06);
+  --shadow:        0 4px 12px rgba(20,18,16,0.08);
+  --shadow-lg:     0 8px 24px rgba(20,18,16,0.1);
+
+  /* ── Z-index ── */
+  --z-header:      100;
+  --z-overlay:     200;
+  --z-modal:       300;
+  --z-whatsapp:    150;
+}
+
+/* Respeta preferencias de usuario */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration:      0ms;
+    --duration-slow: 0ms;
+  }
+}

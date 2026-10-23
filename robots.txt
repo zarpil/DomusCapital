@@ -1,0 +1,6 @@
+# Grupo Domus Capital — robots.txt
+User-agent: *
+Allow: /
+Disallow: /js/
+
+Sitemap: https://grupodomuscapital.com/sitemap.xml

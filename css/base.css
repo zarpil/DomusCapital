@@ -1,0 +1,294 @@
+/* ═══════════════════════════════════════════════════════
+   GRUPO DOMUS CAPITAL — Base & Reset
+   ═══════════════════════════════════════════════════════ */
+
+@import url('variables.css');
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--black);
+  background-color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol { list-style: none; }
+
+/* ── Focus visible ── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ── Selección ── */
+::selection {
+  background-color: var(--gold-light);
+  color: var(--black);
+}
+
+/* ── Contenedor principal ── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ── Utilidades tipográficas ── */
+.serif     { font-family: var(--font-serif); }
+.uppercase { text-transform: uppercase; letter-spacing: 0.12em; }
+.smallcaps { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.text-gold    { color: var(--gold); }
+.text-gold-dk { color: var(--gold-dark); }
+.text-grey    { color: var(--grey); }
+
+/* ── Numeración de secciones ── */
+.section-number {
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: var(--space-md);
+}
+
+.section-number::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
+/* ── Títulos de sección ── */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--black);
+  margin-bottom: var(--space-md);
+}
+
+.section-title--light {
+  color: var(--cream);
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--grey-dark);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.section-subtitle--light {
+  color: var(--grey-light);
+}
+
+/* ── Botones ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius);
+  transition: all var(--duration) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--gold {
+  background-color: var(--gold);
+  color: var(--white);
+}
+.btn--gold:hover {
+  background-color: var(--gold-dark);
+}
+
+.btn--outline {
+  border: 1px solid var(--grey-light);
+  color: var(--black);
+}
+.btn--outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn--outline-light {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--white);
+}
+.btn--outline-light:hover {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+}
+
+.btn--dark {
+  background-color: var(--black);
+  color: var(--white);
+}
+.btn--dark:hover {
+  background-color: var(--charcoal);
+}
+
+/* Flecha en botones */
+.btn .arrow {
+  transition: transform var(--duration) var(--ease);
+}
+.btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ── Enlaces editoriales ── */
+.link-underline {
+  position: relative;
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--gold);
+  transition: width var(--duration) var(--ease);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+.link-underline--light { color: var(--gold-light); }
+.link-underline--light::after { background-color: var(--gold-light); }
+
+/* ── Filete dorado (decorativo) ── */
+.gold-rule {
+  width: 60px;
+  height: 1px;
+  background-color: var(--gold);
+  border: none;
+}
+
+/* ── Espaciado de secciones ── */
+.section {
+  padding-block: var(--space-2xl);
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ── Imagen con zoom sutil en hover ── */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform var(--duration-slow) var(--ease);
+}
+
+.img-zoom:hover img {
+  transform: scale(1.03);
+}
+
+/* ── Skip link (accesibilidad) ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--gold);
+  color: var(--white);
+  z-index: 9999;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ── Visualmente oculto (accesibilidad) ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
