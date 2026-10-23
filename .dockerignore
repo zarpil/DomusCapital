@@ -4,6 +4,3 @@
 .vscode
 .idea
 *.md
-Dockerfile
-docker-compose.yml
-nginx.conf
