@@ -4,9 +4,9 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    expose:
-      # Puerto interno para que Coolify lo enrute por su proxy, sin reservar un puerto del host.
-      - "18492"
+    ports:
+      # Acceso directo por http://IP_DEL_SERVIDOR:18492 y disponible para el proxy de Coolify.
+      - "18492:18492"
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://127.0.0.1:18492/"]
       interval: 30s
