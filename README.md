@@ -22,7 +22,7 @@ El Compose usa `expose`, no publica un puerto del host. Coolify enruta el domini
 
 ## Formulario de contacto
 
-El formulario de `index.html` envía una petición JSON al webhook configurado en su atributo `action`. El flujo de n8n debe aceptar solicitudes desde el dominio del sitio (CORS), procesar los campos `nombre`, `telefono`, `email`, `servicio`, `servicioTexto`, `mensaje`, `consentimientoPrivacidad` y `origen`, y devolver una respuesta HTTP exitosa. Comprueba el envío real después del despliegue.
+El formulario de `index.html` envía una petición JSON a `/api/contact`. Nginx reenvía esa ruta al webhook de n8n, así que el navegador no necesita CORS entre dominios. El flujo debe procesar los campos `nombre`, `telefono`, `email`, `servicio`, `servicioTexto`, `mensaje`, `consentimientoPrivacidad` y `origen`, y devolver una respuesta HTTP exitosa. Comprueba el envío real después del despliegue.
 
 ## Desarrollo local
 
